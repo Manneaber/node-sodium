@@ -78,6 +78,7 @@ var includeFiles = [
   "include/sodium/randombytes.h",
   "include/sodium/randombytes_salsa20_random.h",
   "include/sodium/randombytes_sysrandom.h",
+  "include/sodium/randombytes_internal_random.h",
   "include/sodium/runtime.h",
   "include/sodium/utils.h",
   "include/sodium/version.h",

@@ -68,19 +68,28 @@
           '../deps/build/lib/libsodium.a'
         ],
         'variables': {
-          'osx_min_version': "<!(sw_vers -productVersion | awk -F \'.\' \'{print $1 \".\" $2}\')"
+          'osx_min_version': "10.7"
         },
         "xcode_settings": {
           'MACOSX_DEPLOYMENT_TARGET': '<(osx_min_version)',
           'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
           'OTHER_CFLAGS': ['-arch x86_64 -O2 -g -flto -mmacosx-version-min=<(osx_min_version) -fPIC'],
-          'OTHER_LDFLAGS': ['-arch x86_64 -mmacosx-version-min=<(osx_min_version) -flto']
+          'OTHER_LDFLAGS': ['-arch x86_64 -mmacosx-version-min=<(osx_min_version) -flto'],
+          'CLANG_CXX_LIBRARY': 'libc++',
         }
       }],
       ['OS=="win"', {
         'libraries': [
           '../deps/build/lib/libsodium.lib'
-        ]
+        ],
+        "defines": [
+          "_HAS_EXCEPTIONS=1"
+        ],
+        "msvs_settings": {
+          "VCCLCompilerTool": {
+            "ExceptionHandling": 1
+          },
+        },
       }],
       ['OS=="linux"', {
         'libraries': [
