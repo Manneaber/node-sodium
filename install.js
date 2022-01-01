@@ -59,6 +59,8 @@ var includeFiles = [
   "include/sodium/crypto_secretbox_xchacha20poly1305.h",
   "include/sodium/crypto_secretbox_xsalsa20poly1305.h",
   "include/sodium/crypto_secretstream_xchacha20poly1305.h",
+  "include/sodium/crypto_core_ristretto255.h",
+  "include/sodium/crypto_scalarmult_ristretto255.h",
   "include/sodium/crypto_shorthash.h",
   "include/sodium/crypto_shorthash_siphash24.h",
   "include/sodium/crypto_sign.h",
